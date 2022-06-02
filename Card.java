@@ -8,14 +8,26 @@ package cardtrickice1;
 /** define card value and suits
  * 
  *
- * @author sivagamasrinivasan
+ * @author Tran Thanh Ngan Vu 
+ * @number 991663076
+ * @time 6:15PM 2022-06-02
  */
 public class Card 
 {
     private int value;
     private String suits; //encapsulation
+
+    public Card(String packofcards) {
+
+    }
+
     //constant
     public static final String [] SUITS = { "diamonds","clubs","spades","hearts"};
+
+    public String getSuitRandom() {
+        int s = (int) Math.floor(Math.random()*(3-0+1)+0);
+        return SUITS[s];
+    }
 
     /**
      * @return the value
@@ -24,11 +36,20 @@ public class Card
         return value;
     }
 
+    public String toString() {
+        return value + " " + suits;
+    }
+
+
     /**
      * @param value the value to set
      */
     public void setValue(int value) {
         this.value = value;
+    }
+
+    public int getValueRandom() {
+        return ((int)Math.floor(Math.random()*(13-1+1)+1));
     }
 
     /**
